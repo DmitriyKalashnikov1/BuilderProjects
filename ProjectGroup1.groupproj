@@ -1,0 +1,72 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{725A8898-3FD2-44F1-A43F-AA7EBB3B38C3}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="GUILAB7.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="GUI8.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="GUI9.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="GUlab10.cbproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="GUILAB7">
+        <MSBuild Projects="GUILAB7.cbproj"/>
+    </Target>
+    <Target Name="GUILAB7:Clean">
+        <MSBuild Projects="GUILAB7.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="GUILAB7:Make">
+        <MSBuild Projects="GUILAB7.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="GUI8">
+        <MSBuild Projects="GUI8.cbproj"/>
+    </Target>
+    <Target Name="GUI8:Clean">
+        <MSBuild Projects="GUI8.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="GUI8:Make">
+        <MSBuild Projects="GUI8.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="GUI9">
+        <MSBuild Projects="GUI9.cbproj"/>
+    </Target>
+    <Target Name="GUI9:Clean">
+        <MSBuild Projects="GUI9.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="GUI9:Make">
+        <MSBuild Projects="GUI9.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="GUlab10">
+        <MSBuild Projects="GUlab10.cbproj"/>
+    </Target>
+    <Target Name="GUlab10:Clean">
+        <MSBuild Projects="GUlab10.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="GUlab10:Make">
+        <MSBuild Projects="GUlab10.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="GUILAB7;GUI8;GUI9;GUlab10"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="GUILAB7:Clean;GUI8:Clean;GUI9:Clean;GUlab10:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="GUILAB7:Make;GUI8:Make;GUI9:Make;GUlab10:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
